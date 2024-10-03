@@ -21,11 +21,11 @@ async function changeWeatherUI(capitaSearch) {
         visibility.innerText = data.visibility + 'm'
         wind.innerText = data.wind.speed + 'm/s'
         sun.innerText = data.main.humidity + '%'
-        let temp = Math.round(data.main.temp - 273.15) + '°C'
-        value.innerText = temp
+        let temp = Math.round(data.main.temp - 273.15)
+        value.innerText = temp  + '°C'
         shortDesc.innerText = data.weather[0]? data.weather[0].main : ''
         time.innerText = new Date().toLocaleTimeString('vi')
-       
+       console.log(body)
         body.setAttribute('class', 'cold')
         if(temp >= 25){
             body.setAttribute('class', 'hot')
